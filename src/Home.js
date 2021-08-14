@@ -1,6 +1,17 @@
 import React from 'react'
 
-import { IconButton, makeStyles, Typography, AppBar, Toolbar, Button } from '@material-ui/core'
+import { IconButton, 
+   makeStyles, 
+   AppBar, 
+   Toolbar, 
+   Button,
+   Drawer,
+   List,
+   Divider,
+   ListItem,
+   ListItemIcon,
+   ListItemText
+} from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 import AccountCircle from '@material-ui/icons/AccountCircle'
 
@@ -14,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
    },
    appBar: {
       boxShadow: 'none',
+   },
+   logo: {
+      height: '25px'
    },
    menuIcon: {
       paddingRight: theme.spacing(5),
@@ -42,6 +56,7 @@ export default function Home(){
                >
                   <MenuIcon />
                </IconButton>
+               <img src="/images/preto.png" alt="logo" className={classes.logo}/>
 
                <div className={classes.grow}/>
 
@@ -57,6 +72,35 @@ export default function Home(){
                <Button startIcon={<AccountCircle />} variant='outlined' color='secondary'>Fazer login</Button>
             </Toolbar>
          </AppBar>
+         <Drawer
+            className={classes.drawer}
+            variant="permanent"
+            classes={{
+               paper: classes.drawerPaper,
+            }}
+         >
+            <Toolbar />
+            <div className={classes.drawerContainer}>
+               <List>
+                  {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                     <ListItem button key={text}>
+                        <ListItemIcon>{ index % 2 === 0 ? <InboxIcon /> : <MailIcon /> }</ListItemIcon>
+                        <ListItemText primary={text} />
+                     </ListItem>
+                  ))}
+               </List>
+               <Divider />
+               <List>
+                  {['All mail', 'Trash', 'Spam', 'Drafts'].map((text, index) => (
+                     <ListItem button key={text}>
+                        <ListItemIcon>{ index % 2 === 0 ? <InboxIcon /> : <MailIcon /> }</ListItemIcon>
+                        <ListItemText primary={text} />
+                     </ListItem>
+                  ))}
+               </List>
+            </div>
+
+         </Drawer>
       </div>
    )
 }
