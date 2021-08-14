@@ -2,6 +2,7 @@ import React from 'react'
 
 import { IconButton, makeStyles, Typography, AppBar, Toolbar, Button } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
+import AccountCircle from '@material-ui/icons/AccountCircle'
 
 const useStyles = makeStyles((theme) => ({
    root: {
@@ -31,7 +32,25 @@ export default function Home(){
                   <MenuIcon />
                </IconButton>
                <div className={classes.grow}/>
-               <Button variant='outlined' color='secondary'>Fazer login</Button>
+               <IconButton
+                  className={classes.menuButton}
+                  colors='inherit'
+               >
+                  <MenuIcon />
+               </IconButton>
+               <IconButton
+                  className={classes.menuButton}
+                  colors='inherit'
+               >
+                  <MenuIcon />
+               </IconButton>
+               <IconButton
+                  className={classes.menuButton}
+                  colors='inherit'
+               >
+                  <MenuIcon />
+               </IconButton>
+               <Button startIcon={<AccountCircle />} variant='outlined' color='secondary'>Fazer login</Button>
             </Toolbar>
          </AppBar>
       </div>
