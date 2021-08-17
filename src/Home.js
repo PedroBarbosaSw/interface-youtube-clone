@@ -55,6 +55,10 @@ const useStyles = makeStyles((theme) => ({
    listItemText: {
       fontSize: 14,
    },
+   listItem: {
+      paddingTop: 4,
+      paddingBottom: 4,
+   },
 }))
 
 export default function Home(){
@@ -98,24 +102,24 @@ export default function Home(){
             <Toolbar />
             <div className={classes.drawerContainer}>
                <List>
-                  <ListItem>
-                     <ListItemIcon>{ <Icon /> }</ListItemIcon>
+                  <ListItem button classes={{root: classes.listItem}}>
+                     <ListItemIcon>{ <HomeIcon /> }</ListItemIcon>
                      <ListItemText classes={{
                         primary: classes.listItemText
                      }} 
                      primary={'Inicio'} 
                   />
                   </ListItem>
-                  <ListItem>
-                     <ListItemIcon>{ <Icon /> }</ListItemIcon>
+                  <ListItem button classes={{root: classes.listItem}}>
+                     <ListItemIcon>{ <Whatshot /> }</ListItemIcon>
                      <ListItemText classes={{
                         primary: classes.listItemText
                      }} 
                      primary={'Em alta'} 
                   />
                   </ListItem>
-                  <ListItem>
-                     <ListItemIcon>{ <Icon /> }</ListItemIcon>
+                  <ListItem button classes={{root: classes.listItem}}>
+                     <ListItemIcon>{ <Subscriptions /> }</ListItemIcon>
                      <ListItemText classes={{
                         primary: classes.listItemText
                      }} 
