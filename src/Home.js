@@ -25,6 +25,14 @@ const useStyles = makeStyles((theme) => ({
    },
    appBar: {
       boxShadow: 'none',
+      zIndex: theme.zIndex.drawer +1,
+   },
+   drawer: {
+      width: 240,
+      flexShrink: 0,
+   },
+   drawerPaper: {
+      width: 240,
    },
    logo: {
       height: '25px'
@@ -84,7 +92,7 @@ export default function Home(){
                <List>
                   {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
                      <ListItem button key={text}>
-                        <ListItemIcon>{ index % 2 === 0 ? <InboxIcon /> : <MailIcon /> }</ListItemIcon>
+                        {/* <ListItemIcon>{ index % 2 === 0 ? <InboxIcon /> : <MailIcon /> }</ListItemIcon> */}
                         <ListItemText primary={text} />
                      </ListItem>
                   ))}
@@ -93,7 +101,7 @@ export default function Home(){
                <List>
                   {['All mail', 'Trash', 'Spam', 'Drafts'].map((text, index) => (
                      <ListItem button key={text}>
-                        <ListItemIcon>{ index % 2 === 0 ? <InboxIcon /> : <MailIcon /> }</ListItemIcon>
+                        {/* <ListItemIcon>{ index % 2 === 0 ? <InboxIcon /> : <MailIcon /> }</ListItemIcon> */}
                         <ListItemText primary={text} />
                      </ListItem>
                   ))}
