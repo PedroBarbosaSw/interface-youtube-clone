@@ -23,6 +23,9 @@ import HomeIcon from '@material-ui/icons/Home'
 import Subscriptions from '@material-ui/icons/Subscriptions'
 import Whatshot from '@material-ui/icons/Whatshot'
 
+import VideoLibrary from '@material-ui/icons/VideoLibrary'
+import History from '@material-ui/icons/History'
+
 const useStyles = makeStyles((theme) => ({
    root: {
       height: '100vh',
@@ -124,6 +127,29 @@ export default function Home(){
                         primary: classes.listItemText
                      }} 
                      primary={'Inscrições'} 
+                  />
+                  </ListItem>
+               </List>
+
+               <List>
+                  <ListItem button classes={{root: classes.listItem}}>
+                     <ListItemIcon>
+                        <VideoLibrary />
+                     </ListItemIcon>
+                     <ListItemText classes={{
+                        primary: classes.listItemText
+                     }} 
+                     primary={'Biblioteca'} 
+                  />
+                  </ListItem>
+                  <ListItem button classes={{root: classes.listItem}}>
+                     <ListItemIcon>
+                        <History />   
+                     </ListItemIcon>
+                     <ListItemText classes={{
+                        primary: classes.listItemText
+                     }} 
+                     primary={'Em alta'} 
                   />
                   </ListItem>
                </List>
